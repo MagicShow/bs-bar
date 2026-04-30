@@ -52,13 +52,14 @@
     }
 
     nav .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: #fff;
+      display: flex;
+      align-items: center;
     }
 
-    nav .logo span { color: var(--gold); }
+    nav .logo img {
+      height: 42px;
+      width: auto;
+    }
 
     nav .nav-links {
       display: flex;
@@ -451,15 +452,12 @@
       padding: 3rem 2rem;
     }
 
-    footer .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 0.5rem;
+    footer .logo img {
+      height: 60px;
+      width: auto;
+      margin: 0 auto 0.75rem;
+      display: block;
     }
-
-    footer .logo span { color: var(--gold); }
 
     footer .tagline {
       font-size: 0.8rem;
@@ -560,7 +558,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">BS <span>BAR</span></div>
+    <div class="logo"><img src="logo.png" alt="BS BAR - Mobile Beverage Service"></div>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#menu">Menu</a>
@@ -574,7 +572,7 @@
   <section class="hero">
     <div class="hero-inner">
       <p class="hero-label">Portland · Oregon · Willamette Valley</p>
-      <h1>BS <span>BAR</span></h1>
+      <img src="logo.png" alt="BS BAR Mobile Beverage Service" style="max-width: 260px; width: 100%; height: auto; margin: 0 auto 1.5rem; display: block;">
       <p class="hero-sub">Mobile Beverage Service</p>
       <p class="hero-tagline">Elevated service. Clean setup. Unmatched vibe.</p>
       <div class="hero-btns">
