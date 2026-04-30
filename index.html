@@ -103,8 +103,8 @@
       text-align: center;
       padding: 4rem 2rem;
       background:
-        linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,1) 100%),
-        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+        linear-gradient(to bottom, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,1) 100%),
+        url('trailer.jpg') center/cover no-repeat fixed;
       position: relative;
     }
 
@@ -418,6 +418,44 @@
       margin-bottom: 1.5rem;
     }
 
+    /* ── TRAILER SECTION ── */
+    .trailer-section {
+      background: var(--black);
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .trailer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .trailer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .trailer-img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .trailer-text h2 { margin-bottom: 1.5rem; }
+
+    .trailer-text p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .trailer-text p:last-child { margin-bottom: 0; }
+
     /* ── ABOUT ── */
     .about { background: var(--card); }
 
@@ -692,6 +730,19 @@
       </div>
 
       <p class="menu-note">Menu subject to customization per event. Ask us about seasonal specials and custom cocktails for your occasion.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT / TRAILER SECTION -->
+  <section class="trailer-section">
+    <div class="trailer-inner">
+      <img src="trailer.jpg" alt="BS BAR mobile beverage trailer at golden sunset" class="trailer-img">
+      <div class="trailer-text">
+        <p class="section-label">Our Setup</p>
+        <h2 class="section-title" style="text-align:left;">The Bar That<br>Comes to You</h2>
+        <p>BS BAR LLC brings a fully equipped, professionally styled mobile bar trailer directly to your venue. Whether it's a vineyard wedding, a backyard birthday, or a corporate event — we handle everything.</p>
+        <p style="margin-top:1rem;">Premium bar experience. Clean setup. Unmatched vibe.</p>
+      </div>
     </div>
   </section>
 
