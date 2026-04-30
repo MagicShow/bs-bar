@@ -42,9 +42,8 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -57,7 +56,7 @@
     }
 
     nav .logo img {
-      height: 42px;
+      height: 38px;
       width: auto;
     }
 
@@ -71,7 +70,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-dim);
+      color: #555;
       transition: color 0.2s;
     }
 
@@ -82,8 +81,8 @@
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: var(--gold);
-      color: var(--black);
+      background: var(--black);
+      color: #fff;
       padding: 0.55rem 1.3rem;
       border-radius: 2px;
       border: none;
@@ -91,7 +90,7 @@
       font-weight: 600;
     }
 
-    body { padding-top: 62px; }
+    body { padding-top: 60px; }
 
     /* ── HERO ── */
     .hero {
@@ -102,17 +101,8 @@
       align-items: center;
       text-align: center;
       padding: 4rem 2rem;
-      background:
-        linear-gradient(to bottom, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,1) 100%),
-        url('trailer.jpg') center/cover no-repeat fixed;
+      background: url('trailer.jpg') center/cover no-repeat fixed;
       position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%);
     }
 
     .hero-inner { position: relative; z-index: 1; max-width: 760px; }
@@ -124,14 +114,6 @@
       color: var(--gold);
       margin-bottom: 1.5rem;
     }
-
-    .hero h1 {
-      font-size: clamp(3.5rem, 12vw, 7.5rem);
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero h1 span { color: var(--gold); }
 
     .hero-sub {
       font-family: 'Playfair Display', serif;
@@ -332,6 +314,44 @@
       font-style: italic;
     }
 
+    /* ── TRAILER SECTION ── */
+    .trailer-section {
+      background: var(--black);
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .trailer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .trailer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .trailer-img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .trailer-text h2 { margin-bottom: 1.5rem; }
+
+    .trailer-text p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .trailer-text p:last-child { margin-bottom: 0; }
+
     /* ── BOOKING ── */
     .booking {
       background: var(--black);
@@ -418,44 +438,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ── TRAILER SECTION ── */
-    .trailer-section {
-      background: var(--black);
-      padding: 5rem 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .trailer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .trailer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-
-    .trailer-img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      display: block;
-    }
-
-    .trailer-text h2 { margin-bottom: 1.5rem; }
-
-    .trailer-text p {
-      font-size: 1rem;
-      color: var(--text);
-      line-height: 1.8;
-    }
-
-    .trailer-text p:last-child { margin-bottom: 0; }
-
     /* ── ABOUT ── */
     .about { background: var(--card); }
 
@@ -517,11 +499,6 @@
       font-size: 0.72rem;
       color: var(--text-dim);
       margin-top: 2rem;
-    }
-
-    /* ── RESPONSIVE NAV ── */
-    @media (max-width: 640px) {
-      nav .nav-links { display: none; }
     }
 
     /* ── MODAL ── */
@@ -586,8 +563,12 @@
       display: block;
       min-height: 500px;
     }
-    @media (max-width: 640px) {
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
       nav .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
       .modal-box { max-height: 85vh; }
     }
   </style>
@@ -600,6 +581,7 @@
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#menu">Menu</a>
+      <a href="#trailer">Our Setup</a>
       <a href="#about">About</a>
       <a href="#book">Book Us</a>
     </div>
@@ -610,7 +592,6 @@
   <section class="hero">
     <div class="hero-inner">
       <p class="hero-label">Portland · Oregon · Willamette Valley</p>
-      <img src="logo.png" alt="BS BAR Mobile Beverage Service" style="max-width: 260px; width: 100%; height: auto; margin: 0 auto 1.5rem; display: block;">
       <p class="hero-sub">Mobile Beverage Service</p>
       <p class="hero-tagline">Elevated service. Clean setup. Unmatched vibe.</p>
       <div class="hero-btns">
@@ -733,8 +714,8 @@
     </div>
   </section>
 
-  <!-- ABOUT / TRAILER SECTION -->
-  <section class="trailer-section">
+  <!-- TRAILER / SETUP SECTION -->
+  <section class="trailer-section" id="trailer">
     <div class="trailer-inner">
       <img src="trailer.jpg" alt="BS BAR mobile beverage trailer at golden sunset" class="trailer-img">
       <div class="trailer-text">
@@ -775,6 +756,15 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo"><img src="logo.png" alt="BS BAR"></div>
+    <p class="tagline">Mobile Beverage Service · Oregon</p>
+    <p class="contact-line"><a href="tel:5035590761">(503) 559-0761</a></p>
+    <p class="contact-line"><a href="mailto:BSBAR2025@outlook.com">BSBAR2025@outlook.com</a></p>
+    <p class="copyright">&copy; 2026 BS BAR LLC. All rights reserved.</p>
+  </footer>
+
   <!-- MODAL -->
   <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Booking Form">
     <div class="modal-box">
@@ -806,15 +796,6 @@
       if (e.target.id === 'modal') closeModal();
     });
   </script>
-
-</body>
-</html>
-    <div class="logo">BS <span>BAR</span></div>
-    <p class="tagline">Mobile Beverage Service · Oregon</p>
-    <p class="contact-line"><a href="tel:5035590761">(503) 559-0761</a></p>
-    <p class="contact-line"><a href="mailto:BSBAR2025@outlook.com">BSBAR2025@outlook.com</a></p>
-    <p class="copyright">&copy; 2026 BS BAR LLC. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
